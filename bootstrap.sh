@@ -4,7 +4,7 @@
 PASSWORD='root'
 PROJECTFOLDER='myproject'
 
-# create project folder
+# create project folder - if not already exists.
 sudo mkdir "/var/www/html/${PROJECTFOLDER}"
 
 # Add ondrej php repos
