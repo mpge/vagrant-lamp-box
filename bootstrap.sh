@@ -23,10 +23,6 @@ sudo apt-get install -y php5
 sudo apt-get install php7.1 php7.1-common
 sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring
 
-# make php 7.1 default
-sudo a2dismod php5
-sudo a2enmod php7.1
-
 # install mysql and give password to installer
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $PASSWORD"
@@ -57,6 +53,10 @@ echo "${VHOST}" > /etc/apache2/sites-available/000-default.conf
 
 # enable mod_rewrite
 sudo a2enmod rewrite
+
+# make php 7.1 default
+sudo a2dismod php5
+sudo a2enmod php7.1
 
 # restart apache
 service apache2 restart
