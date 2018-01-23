@@ -20,8 +20,9 @@ sudo apt-get install -y software-properties-common python-software-properties
 # install apache 2.5 and php 5.5
 sudo apt-get install -y apache2
 sudo apt-get install -y php5
-sudo apt-get install php7.1 php7.1-common
-sudo apt-get install php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring
+sudo apt-get install -y php7.1 php7.1-common
+sudo apt-get install -y libapache2-mod-php7.1
+sudo apt-get install -y php7.1-curl php7.1-xml php7.1-zip php7.1-gd php7.1-mysql php7.1-mbstring
 
 # install mysql and give password to installer
 sudo debconf-set-selections <<< "mysql-server mysql-server/root_password password $PASSWORD"
